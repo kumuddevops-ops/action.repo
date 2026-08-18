@@ -1,0 +1,26 @@
+name: Windows Runner Test
+
+on:
+    push:
+        branches:
+             - main
+
+jobs:
+  test:
+    runs-on: [self-hosted, windows, X64]
+
+    steps:
+      - name: Check PowerShell
+        shell: powershell
+        run: |
+          $PSVersionTable
+
+      - name: Check hostname
+        shell: powershell
+        run: |
+          hostname
+
+      - name: Check user
+        shell: powershell
+        run: |
+          whoami
